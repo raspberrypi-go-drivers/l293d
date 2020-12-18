@@ -78,7 +78,7 @@ L293D datasheet: https://www.ti.com/lit/ds/symlink/l293.pdf
      2Y --|              |-- 3Y
           |              |
      2A --|              |-- 3A
-	      |              |
+          |              |
    Vcc2 --|______________|-- 3,4EN
 ```
 
