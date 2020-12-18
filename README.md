@@ -1,12 +1,15 @@
 # L293D
 
-[![PkgGoDev](https://pkg.go.dev/badge/github.com/bbayszczak/raspberrypi-go-drivers/l293d)](https://pkg.go.dev/github.com/bbayszczak/raspberrypi-go-drivers/l293d)
+[![Go Reference](https://pkg.go.dev/badge/github.com/raspberrypi-go-drivers/l293d.svg)](https://pkg.go.dev/github.com/raspberrypi-go-drivers/l293d)
+![golangci-lint](https://github.com/raspberrypi-go-drivers/l293d/workflows/golangci-lint/badge.svg)
+[![Go Report Card](https://goreportcard.com/badge/github.com/raspberrypi-go-drivers/l293d)](https://goreportcard.com/report/github.com/raspberrypi-go-drivers/l293d)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-The L293D chip allows to control 2 DC motors
+The L293D chip allows to control 2 DC motors using 2 PWM pins and 4 other pins
 
 ## Documentation
 
-For full documentation, please visit [![PkgGoDev](https://pkg.go.dev/badge/github.com/bbayszczak/raspberrypi-go-drivers/hcsr04)](https://pkg.go.dev/github.com/bbayszczak/raspberrypi-go-drivers/hcsr04)
+For full documentation, please visit [![Go Reference](https://pkg.go.dev/badge/github.com/raspberrypi-go-drivers/l293d.svg)](https://pkg.go.dev/github.com/raspberrypi-go-drivers/l293d)
 
 ## Quick start
 
@@ -103,3 +106,17 @@ L293D datasheet: https://www.ti.com/lit/ds/symlink/l293.pdf
 
 
 To control speed, a PWM signal have to be sent to pins 1,2EN for motor 1 and 3,4EN for motor 2
+
+## Raspberry Pi compatibility
+
+This driver has has only been tested on an Raspberry Pi Zero WH using integrated bluetooth but may work well on other Raspberry Pi having integrated Bluetooth
+
+## License
+
+MIT License
+
+---
+
+Special thanks to @stianeikeland
+
+This driver is based on his work in [stianeikeland/go-rpio](https://github.com/stianeikeland/go-rpio/)
