@@ -119,6 +119,29 @@ func ExampleMotor_SetSpeed() {
 	motor1.SetSpeed(65)
 }
 
+func ExampleMotor_GetSpeed() {
+	err := rpio.Open()
+	if err != nil {
+		os.Exit(1)
+	}
+	defer rpio.Close()
+	chip := l293d.NewL293D()
+	pinEnable := uint8(12) // PWM compatible
+	pin1 := uint8(17)
+	pin2 := uint8(27)
+
+	motor1, err := chip.NewMotor(1, pinEnable, pin1, pin2)
+	if err != nil {
+		fmt.Println("impossible to create new motor")
+	}
+	// Looks like motors are not running correctly below some speed percentage
+	// I experienced it below 50%
+	// Set motor1 speed to 65%
+	motor1.SetSpeed(65)
+	fmt.Println(motor1.GetSpeed())
+	// Output: 65
+}
+
 func ExampleMotor_EnableBrake() {
 	err := rpio.Open()
 	if err != nil {

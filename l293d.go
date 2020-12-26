@@ -24,6 +24,7 @@ type Motor struct {
 	pin1      rpio.Pin
 	pin2      rpio.Pin
 	brake     bool
+	speed     int
 }
 
 // NewL293D creates a new L293D instance
@@ -78,6 +79,7 @@ func (motor *Motor) SetSpeed(speedPct int) {
 	} else if speedPct > 100 {
 		speedPct = 100
 	}
+	motor.speed = speedPct
 	abs := uint32(math.Abs(float64(speedPct)))
 	if speedPct > 0 {
 		motor.pinEnable.DutyCycle(abs, 100)
@@ -96,6 +98,11 @@ func (motor *Motor) SetSpeed(speedPct int) {
 			motor.pinEnable.DutyCycle(100, 100)
 		}
 	}
+}
+
+// GetSpeed returns the current Motor speed
+func (motor *Motor) GetSpeed() int {
+	return motor.speed
 }
 
 // EnableBrake enables braking when speed is set to 0%
